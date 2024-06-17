@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, Card } from 'react-bootstrap';
+import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 
 const books = [
   { title: 'Book 1', description: 'This is a description of book 1' },
@@ -9,7 +9,7 @@ const books = [
 
 const MainContent = () => {
   return (
-    <Container>
+    <Container className="main-content">
       <Row>
         {books.map((book, index) => (
           <Col key={index} sm={12} md={6} lg={4} className="mb-4">
@@ -17,6 +17,7 @@ const MainContent = () => {
               <Card.Body>
                 <Card.Title>{book.title}</Card.Title>
                 <Card.Text>{book.description}</Card.Text>
+                <Button variant="primary">Read More</Button>
               </Card.Body>
             </Card>
           </Col>
