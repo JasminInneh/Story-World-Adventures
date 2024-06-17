@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./Header";
 import MainContent from "./MainContent";
 import Footer from "./Footer";
+import Banner from "./Banner"
 
 //include images into your bundle
 import rigoImage from "../../img/rigo-baby.jpg";
@@ -11,6 +12,7 @@ const Home = () => {
   return (
     <div>
       <Header />
+      <Banner />
       <MainContent />
       <Footer />
     </div>
