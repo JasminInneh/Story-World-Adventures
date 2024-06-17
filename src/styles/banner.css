@@ -1,5 +1,5 @@
 .banner {
-  background-image: url("https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/48bb5610-a07c-476c-9efc-c6515d704156/7927b132-6c47-4939-9f2a-d7e2a9491ec1.png"); /* Ensure the image path is correct */
+  background-image: url("https://i.ibb.co/VYvswk6/banner.jpg");
   background-size: cover;
   background-position: center;
   color: white;
@@ -15,12 +15,6 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.5
-  ); /* Adds a dark overlay for better text visibility */
 }
 
 .banner-content {
