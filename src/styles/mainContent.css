@@ -1,0 +1,47 @@
+.main-content {
+    background-color: #FFF9C4; /* Using the secondary background color */
+    text-align: center;
+    padding: 50px 20px;
+  }
+  
+  .central-content {
+    max-width: 800px; /* Limit the maximum width of the content */
+    margin: 0 auto 50px; /* Center the content and add bottom margin */
+  }
+  
+  .central-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .central-content h2 {
+    color: #002B5B; /* Primary text color */
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Add additional styling for book cards if necessary */
+  .card {
+    border: none; /* Customize card borders if needed */
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    color: #002B5B; /* Primary text color */
+  }
+  
+  .card-text {
+    color: #4A4A4A; /* Secondary text color */
+  }
+  
+  button {
+    background-color: #FF6F61; /* Primary button color */
+    border-color: #FF6F61;
+  }
+  
+  button:hover {
+    background-color: #00838F; /* Hover/active button color */
+    border-color: #00838F;
+  }
+  

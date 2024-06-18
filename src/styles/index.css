@@ -1,12 +1,85 @@
-
-/* 
-
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
-
-*/
+/* Colors */
+:root {
+    --primary-text: #002B5B;
+    --secondary-text: #4A4A4A;
+    --background-main: #E0F7FA;
+    --background-content: #FFFFFF;
+    --background-secondary: #FFF9C4;
+    --button-primary: #FF6F61;
+    --button-secondary: #4DD0E1;
+    --button-hover: #00838F;
+  }
+  
+  /* Global Styles */
+  body {
+    background-color: var(--background-main);
+    color: var(--primary-text);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--primary-text);
+  }
+  
+  p, span, li {
+    color: var(--secondary-text);
+  }
+  
+  /* Header */
+  .navbar {
+    background-color: var(--background-secondary);
+  }
+  
+  .nav-link {
+    color: var(--primary-text) !important;
+  }
+  
+  .nav-link:hover {
+    color: var(--button-hover) !important;
+  }
+  
+  /* Main Content */
+  .main-content {
+    background-color: var(--background-content);
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  /* Buttons */
+  .btn-primary {
+    background-color: var(--button-primary);
+    border-color: var(--button-primary);
+  }
+  
+  .btn-primary:hover,
+  .btn-primary:focus,
+  .btn-primary:active {
+    background-color: var(--button-hover);
+    border-color: var(--button-hover);
+  }
+  
+  .btn-secondary {
+    background-color: var(--button-secondary);
+    border-color: var(--button-secondary);
+  }
+  
+  .btn-secondary:hover,
+  .btn-secondary:focus,
+  .btn-secondary:active {
+    background-color: var(--button-hover);
+    border-color: var(--button-hover);
+  }
+  
+  /* Footer */
+  footer {
+    background-color: var(--background-secondary);
+    color: var(--primary-text);
+  }
+  
+  footer a {
+    color: var(--primary-text);
+  }
+  
+  footer a:hover {
+    color: var(--button-hover);
+  }
+  
