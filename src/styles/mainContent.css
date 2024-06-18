@@ -1,0 +1,36 @@
+.card {
+    height: 100%; /* Ensure each card takes up full height */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card-body {
+    flex: 1; /* Allow the Card.Body to grow and occupy remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    color: #002B5B; /* Primary text color */
+    margin-bottom: 10px; /* Adjust as needed */
+  }
+  
+  .card-text {
+    flex: 1; /* Allow description to take remaining space */
+    color: #4A4A4A; /* Secondary text color */
+    margin-bottom: 10px; /* Adjust as needed */
+  }
+  
+  button {
+    background-color: #FF6F61; /* Primary button color */
+    border-color: #FF6F61;
+    align-self: flex-end; /* Align button to the bottom */
+  }
+  
+  button:hover {
+    background-color: #00838F; /* Hover/active button color */
+    border-color: #00838F;
+  }
+  
