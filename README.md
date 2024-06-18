@@ -12,7 +12,7 @@ Screenshots
 
 ![image](https://github.com/JasminInneh/Story-World-Adventures/assets/110208655/c9db6b79-94ca-40d4-8abd-ee499975c719)
 
-![image](https://github.com/JasminInneh/Story-World-Adventures/assets/110208655/2dd738c4-c71e-4570-be2e-6479e300808e)
+
 
 
 
