@@ -8,7 +8,14 @@ Modal View: Allows users to read full stories in a popup modal for an immersive 
 Dynamic Data Fetching: Fetches story data from a JSON file, making it easy to add and update stories.
 
 Screenshots
-COMING SOON
+![image](https://github.com/JasminInneh/Story-World-Adventures/assets/110208655/e84fa2a9-c130-4371-9b28-a056fdb37c0c)
+
+![image](https://github.com/JasminInneh/Story-World-Adventures/assets/110208655/c9db6b79-94ca-40d4-8abd-ee499975c719)
+
+![image](https://github.com/JasminInneh/Story-World-Adventures/assets/110208655/2dd738c4-c71e-4570-be2e-6479e300808e)
+
+
+
 
 Technologies Used
 React: For building the user interface.
