@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import BookModal from "../component/BookModal.js"
-import "../../styles/mainContent.css"; // Ensure this path is correct
+import React, { useState, useEffect } from "react";
+import { Container, Row, Col, Card, Button, Modal } from "react-bootstrap";
+import BookModal from "../component/BookModal.js"; 
+import "../../styles/mainContent.css"; 
 
 const MainContent = () => {
   const [books, setBooks] = useState([]);
@@ -63,7 +63,7 @@ const MainContent = () => {
                 variant="top"
                 src={book.image}
                 alt={book.title}
-                style={{ height: "50%" }} // Adjust image height as needed
+                style={{ height: "50%" }} 
               />
               <Card.Body className="card-body">
                 <Card.Title className="card-title">{book.title}</Card.Title>
@@ -90,7 +90,4 @@ const MainContent = () => {
 };
 
 export default MainContent;
-
-
-
 
