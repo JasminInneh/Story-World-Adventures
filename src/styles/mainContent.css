@@ -1,43 +1,32 @@
-.main-content {
-    background-color: #FFF9C4; /* Using the secondary background color */
-    text-align: center;
-    padding: 50px 20px;
+.card {
+    height: 100%; /* Ensure each card takes up full height */
+    display: flex;
+    flex-direction: column;
   }
   
-  .central-content {
-    max-width: 800px; /* Limit the maximum width of the content */
-    margin: 0 auto 50px; /* Center the content and add bottom margin */
-  }
-  
-  .central-image {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 20px;
-  }
-  
-  .central-content h2 {
-    color: #002B5B; /* Primary text color */
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
-  
-  /* Add additional styling for book cards if necessary */
-  .card {
-    border: none; /* Customize card borders if needed */
+  .card-body {
+    flex: 1; /* Allow the Card.Body to grow and occupy remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   
   .card-title {
     font-size: 1.5rem;
     color: #002B5B; /* Primary text color */
+    margin-bottom: 10px; /* Adjust as needed */
   }
   
   .card-text {
+    flex: 1; /* Allow description to take remaining space */
     color: #4A4A4A; /* Secondary text color */
+    margin-bottom: 10px; /* Adjust as needed */
   }
   
   button {
     background-color: #FF6F61; /* Primary button color */
     border-color: #FF6F61;
+    align-self: flex-end; /* Align button to the bottom */
   }
   
   button:hover {

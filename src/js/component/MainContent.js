@@ -24,7 +24,7 @@ const MainContent = () => {
       {/* Central Content */}
       <div className="central-content">
         <img
-          src="https://i.ibb.co/JBxqc7N/main-Content.jpg"
+          src="https://i.ibb.co/myLJDGN/banner5.jpg"
           alt="animated character flying with a book opened as wings"
           className="central-image"
         />
@@ -35,16 +35,17 @@ const MainContent = () => {
       <Row>
         {books.map((book, index) => (
           <Col key={index} sm={12} md={6} lg={4} className="mb-4">
-            <Card>
+            <Card style={{ height: "100%" }}>
               <Card.Img
                 variant="top"
-                src={book.image}  // Use the imgBB URL directly from JSON
+                src={book.image}
                 alt={book.title}
+                style={{ height: "50%" }} // Adjust image height as needed
               />
 
-              <Card.Body>
-                <Card.Title>{book.title}</Card.Title>
-                <Card.Text>{book.description}</Card.Text>
+              <Card.Body className="card-body">
+                <Card.Title className="card-title">{book.title}</Card.Title>
+                <Card.Text className="card-text">{book.description}</Card.Text>
                 <Button variant="primary">Read More</Button>
               </Card.Body>
             </Card>
