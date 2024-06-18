@@ -1,14 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import BookModal from "../component/BookModal.js"
-import "../../styles/mainContent.css"; // Ensure this path is correct
+import BookModal from "../component/BookModal";
+import "../../styles/mainContent.css";
 
 const MainContent = () => {
   const [books, setBooks] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [selectedBook, setSelectedBook] = useState(null);
+  const booksSectionRef = useRef(null);
+  const isMounted = useRef(true); // useRef to track component mount state
 
   useEffect(() => {
+    // Set isMounted to true when component mounts
+    isMounted.current = true;
+
     fetch("/books.json")
       .then((response) => {
         if (!response.ok) {
@@ -16,11 +21,21 @@ const MainContent = () => {
         }
         return response.json();
       })
-      .then((data) => setBooks(data))
+      .then((data) => {
+        // Only update state if component is still mounted
+        if (isMounted.current) {
+          setBooks(data);
+        }
+      })
       .catch((error) =>
         console.error("There was a problem with the fetch operation:", error)
       );
-  }, []);
+
+    // Clean up function to cancel fetch if component unmounts
+    return () => {
+      isMounted.current = false; // Set isMounted to false when component unmounts
+    };
+  }, []); // Empty dependency array ensures effect runs only once
 
   const handleShowModal = (book) => {
     setSelectedBook(book);
@@ -57,13 +72,13 @@ const MainContent = () => {
       {/* Book Listings */}
       <Row>
         {books.map((book, index) => (
-          <Col key={index} sm={12} md={6} lg={4} className="mb-4">
+          <Col key={index} sm={12} md={6} lg={4} className="mb-4" ref={booksSectionRef}>
             <Card style={{ height: "100%" }}>
               <Card.Img
                 variant="top"
                 src={book.image}
                 alt={book.title}
-                style={{ height: "50%" }} // Adjust image height as needed
+                style={{ height: "50%" }}
               />
               <Card.Body className="card-body">
                 <Card.Title className="card-title">{book.title}</Card.Title>
@@ -90,7 +105,6 @@ const MainContent = () => {
 };
 
 export default MainContent;
-
 
 
 
