@@ -38,7 +38,7 @@ const MainContent = () => {
             <Card>
               <Card.Img
                 variant="top"
-                src={`/img/${book.image}`}
+                src={book.image}  // Use the imgBB URL directly from JSON
                 alt={book.title}
               />
 
