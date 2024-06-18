@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import BookModal from "../component/BookModal.js"
 import "../../styles/mainContent.css"; // Ensure this path is correct
 
 const MainContent = () => {
   const [books, setBooks] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+  const [selectedBook, setSelectedBook] = useState(null);
 
   useEffect(() => {
     fetch("/books.json")
@@ -19,8 +22,19 @@ const MainContent = () => {
       );
   }, []);
 
+  const handleShowModal = (book) => {
+    setSelectedBook(book);
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+    setSelectedBook(null);
+  };
+
   return (
     <Container className="main-content">
+      {/* Central Content */}
       <Row>
         <Col md={6} className="d-flex align-items-center">
           <div className="central-content">
@@ -33,7 +47,9 @@ const MainContent = () => {
         </Col>
         <Col md={6} className="d-flex align-items-center">
           <div>
-            <h2 className="main-content-banner">Explore, Learn, and Imagine in Every Chapter</h2>
+            <h2 className="main-content-banner">
+              Explore, Learn, and Imagine in Every Chapter
+            </h2>
           </div>
         </Col>
       </Row>
@@ -49,19 +65,32 @@ const MainContent = () => {
                 alt={book.title}
                 style={{ height: "50%" }} // Adjust image height as needed
               />
-
               <Card.Body className="card-body">
                 <Card.Title className="card-title">{book.title}</Card.Title>
                 <Card.Text className="card-text">{book.description}</Card.Text>
-                <Button variant="primary">Read More</Button>
+                <Button variant="primary" onClick={() => handleShowModal(book)}>
+                  Read More
+                </Button>
               </Card.Body>
             </Card>
           </Col>
         ))}
       </Row>
+
+      {/* Modal */}
+      {selectedBook && (
+        <BookModal
+          show={showModal}
+          onHide={handleCloseModal}
+          book={selectedBook}
+        />
+      )}
     </Container>
   );
 };
 
 export default MainContent;
+
+
+
 
