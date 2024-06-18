@@ -8,8 +8,12 @@ const MainContent = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedBook, setSelectedBook] = useState(null);
   const booksSectionRef = useRef(null);
+  const isMounted = useRef(true); // useRef to track component mount state
 
   useEffect(() => {
+    // Set isMounted to true when component mounts
+    isMounted.current = true;
+
     fetch("/books.json")
       .then((response) => {
         if (!response.ok) {
@@ -17,11 +21,21 @@ const MainContent = () => {
         }
         return response.json();
       })
-      .then((data) => setBooks(data))
+      .then((data) => {
+        // Only update state if component is still mounted
+        if (isMounted.current) {
+          setBooks(data);
+        }
+      })
       .catch((error) =>
         console.error("There was a problem with the fetch operation:", error)
       );
-  }, []);
+
+    // Clean up function to cancel fetch if component unmounts
+    return () => {
+      isMounted.current = false; // Set isMounted to false when component unmounts
+    };
+  }, []); // Empty dependency array ensures effect runs only once
 
   const handleShowModal = (book) => {
     setSelectedBook(book);
@@ -31,13 +45,6 @@ const MainContent = () => {
   const handleCloseModal = () => {
     setShowModal(false);
     setSelectedBook(null);
-  };
-
-  const scrollToBooksSection = () => {
-    if (booksSectionRef.current) {
-      // Scroll to the first book card in the list
-      booksSectionRef.current.children[0].scrollIntoView({ behavior: 'smooth' });
-    }
   };
 
   return (
@@ -98,4 +105,6 @@ const MainContent = () => {
 };
 
 export default MainContent;
+
+
 
