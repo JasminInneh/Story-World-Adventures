@@ -1,16 +1,8 @@
-import React, { useRef } from 'react';
-import { Navbar, Nav } from 'react-bootstrap';
-import '../../styles/header.css'; // Import your custom CSS for header styles
+import React from "react";
+import { Navbar, Nav } from "react-bootstrap";
+import "../../styles/header.css"; // Import your custom CSS for header styles
 
 const Header = () => {
-  const booksSectionRef = useRef(null);
-
-  const scrollToBooksSection = () => {
-    if (booksSectionRef.current) {
-      booksSectionRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <Navbar expand="lg" className="navbar">
       <Navbar.Brand href="#home" className="brand">
@@ -19,10 +11,10 @@ const Header = () => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
-          <Nav.Link href="#home" className="nav-link">
+          <Nav.Link href="/" className="nav-link">
             Home
           </Nav.Link>
-          <Nav.Link onClick={scrollToBooksSection} className="nav-link">
+          <Nav.Link href="#books" className="nav-link">
             Books
           </Nav.Link>
           <Nav.Link href="#about" className="nav-link">
@@ -35,4 +27,3 @@ const Header = () => {
 };
 
 export default Header;
-
