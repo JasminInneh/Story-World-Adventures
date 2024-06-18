@@ -33,4 +33,12 @@
     background-color: #00838F; /* Hover/active button color */
     border-color: #00838F;
   }
-  
+  .main-content-banner {
+    /* font-size: 3rem; */
+    margin-bottom: 20px;
+    background-color: #ffd54f; /* Orange color from the gradient */
+    padding: 10px 20px; /* Adjust padding as needed */
+    display: inline-block; /* Ensures the background color covers the entire width */
+    border-radius: 5px; /* Optional: adds rounded corners */
+    color: #002b5b; /* Primary text color */
+  }
