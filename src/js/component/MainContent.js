@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { Container, Row, Col, Card, Button, Modal } from "react-bootstrap";
-import BookModal from "../component/BookModal.js"; 
-import "../../styles/mainContent.css"; 
+import React, { useState, useEffect, useRef } from "react";
+import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import BookModal from "../component/BookModal";
+import "../../styles/mainContent.css";
 
 const MainContent = () => {
   const [books, setBooks] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [selectedBook, setSelectedBook] = useState(null);
+  const booksSectionRef = useRef(null);
 
   useEffect(() => {
     fetch("/books.json")
@@ -30,6 +31,13 @@ const MainContent = () => {
   const handleCloseModal = () => {
     setShowModal(false);
     setSelectedBook(null);
+  };
+
+  const scrollToBooksSection = () => {
+    if (booksSectionRef.current) {
+      // Scroll to the first book card in the list
+      booksSectionRef.current.children[0].scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -57,13 +65,13 @@ const MainContent = () => {
       {/* Book Listings */}
       <Row>
         {books.map((book, index) => (
-          <Col key={index} sm={12} md={6} lg={4} className="mb-4">
+          <Col key={index} sm={12} md={6} lg={4} className="mb-4" ref={booksSectionRef}>
             <Card style={{ height: "100%" }}>
               <Card.Img
                 variant="top"
                 src={book.image}
                 alt={book.title}
-                style={{ height: "50%" }} 
+                style={{ height: "50%" }}
               />
               <Card.Body className="card-body">
                 <Card.Title className="card-title">{book.title}</Card.Title>
