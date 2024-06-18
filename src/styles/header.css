@@ -1,0 +1,20 @@
+.navbar {
+  background-color: #002B5B; /* Set background color */
+  padding: 10px 20px; /* Add padding */
+}
+
+.brand {
+  color: #FFFFFF; /* Set text color */
+  font-size: 1.5rem; /* Adjust font size */
+  font-weight: bold; /* Make text bold if needed */
+}
+
+.nav-link {
+  color: #FFFFFF !important;  /* Set text color */
+  font-size: 1rem; /* Adjust font size */
+  margin-right: 10px; /* Add right margin between links */
+}
+
+.nav-link:hover {
+  color: #FF6F61; /* Change text color on hover */
+}

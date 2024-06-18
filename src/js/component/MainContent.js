@@ -33,7 +33,7 @@ const MainContent = () => {
         </Col>
         <Col md={6} className="d-flex align-items-center">
           <div>
-            <h2>Explore, Learn, and Imagine in Every Chapter</h2>
+            <h2 className="main-content-banner">Explore, Learn, and Imagine in Every Chapter</h2>
           </div>
         </Col>
       </Row>
