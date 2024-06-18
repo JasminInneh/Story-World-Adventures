@@ -1,20 +1,22 @@
-import React, { useEffect, useState } from 'react';
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
-import '../../styles/mainContent.css'; // Ensure this path is correct
+import React, { useEffect, useState } from "react";
+import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import "../../styles/mainContent.css"; // Ensure this path is correct
 
 const MainContent = () => {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
-    fetch('/books.json')
-      .then(response => {
+    fetch("/books.json")
+      .then((response) => {
         if (!response.ok) {
-          throw new Error('Network response was not ok');
+          throw new Error("Network response was not ok");
         }
         return response.json();
       })
-      .then(data => setBooks(data))
-      .catch(error => console.error('There was a problem with the fetch operation:', error));
+      .then((data) => setBooks(data))
+      .catch((error) =>
+        console.error("There was a problem with the fetch operation:", error)
+      );
   }, []);
 
   return (
@@ -34,7 +36,12 @@ const MainContent = () => {
         {books.map((book, index) => (
           <Col key={index} sm={12} md={6} lg={4} className="mb-4">
             <Card>
-              <Card.Img variant="top" src={`/img${book.image}`} alt={book.title} />
+              <Card.Img
+                variant="top"
+                src={`/img/${book.image}`}
+                alt={book.title}
+              />
+
               <Card.Body>
                 <Card.Title>{book.title}</Card.Title>
                 <Card.Text>{book.description}</Card.Text>

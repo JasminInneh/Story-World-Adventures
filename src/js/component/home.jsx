@@ -4,8 +4,7 @@ import MainContent from "./MainContent";
 import Footer from "./Footer";
 import Banner from "./Banner"
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+
 
 //create your first component
 const Home = () => {
