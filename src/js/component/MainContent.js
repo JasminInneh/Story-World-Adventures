@@ -8,7 +8,9 @@ const MainContent = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedBook, setSelectedBook] = useState(null);
 
+
   useEffect(() => {
+    // added a /data in front of books.json
     fetch("/books.json")
       .then((response) => {
         if (!response.ok) {
@@ -23,6 +25,12 @@ const MainContent = () => {
         console.error("There was a problem with the fetch operation:", error)
       );
   }, []);
+  // useEffect(() => {
+  //   fetch("/data/books.json")
+  //     .then((response) => response.json())
+  //     .then((data) => setBooks(data))
+  //     .catch((error) => console.error("Error fetching books:", error));
+  // }, []);
 
   const handleShowModal = (book) => {
     setSelectedBook(book);
@@ -92,3 +100,6 @@ const MainContent = () => {
 };
 
 export default MainContent;
+
+
+
